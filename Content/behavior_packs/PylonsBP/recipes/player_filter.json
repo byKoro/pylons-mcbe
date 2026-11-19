@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pylons:player_filter"
+    },
+    "tags": ["crafting_table"],
+    "group": "pylons",
+    "pattern": [
+      "tct",
+      "gdg",
+      "ggg"
+    ],
+    "key": {
+      "c": { "item": "minecraft:green_dye" },
+      "d": { "item": "minecraft:diamond" },
+      "g": { "item": "minecraft:glass" },
+      "t": { "item": "minecraft:cyan_terracotta" }
+    },
+    "unlock": [{ "item": "pylons:expulsion_pylon" }],
+    "result": {
+      "item": "pylons:player_filter",
+      "count": 1
+    }
+  }
+}

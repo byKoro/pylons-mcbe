@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.80",
+  "minecraft:item": {
+    "description": {
+      "identifier": "pylons:ui_placeholder",
+      "menu_category": {
+        "category": "none",
+        "is_hidden_in_commands": true
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.pylons:ui_placeholder"
+      },
+      "minecraft:icon": "pylons:ui_placeholder",
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

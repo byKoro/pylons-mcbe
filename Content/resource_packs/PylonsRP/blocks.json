@@ -1,0 +1,18 @@
+{
+  "format_version": "1.20.40",
+  "pylons:infusion_pylon": {
+    "sound": "stone"
+  },
+  "pylons:harvester_pylon": {
+    "sound": "stone"
+  },
+  "pylons:expulsion_pylon": {
+    "sound": "stone"
+  },
+  "pylons:interdiction_pylon": {
+    "sound": "stone"
+  },
+  "pylons:protection_pylon": {
+    "sound": "stone"
+  }
+}

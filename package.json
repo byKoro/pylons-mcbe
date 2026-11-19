@@ -1,0 +1,17 @@
+{
+  "name": "bedrock-pylons",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc -p .",
+    "build": "bun build ./tscripts/main.ts --outfile ./Content/behavior_packs/PylonsBP/scripts/main.js --target browser --external @minecraft/server --external @minecraft/server-ui --external @minecraft/common --minify-whitespace --sourcemap=none",
+    "watch": "bun build ./tscripts/main.ts --outfile ./Content/behavior_packs/PylonsBP/scripts/main.js --target browser --external @minecraft/server --external @minecraft/server-ui --external @minecraft/common --minify-whitespace --sourcemap=none --watch"
+  },
+  "dependencies": {
+    "@minecraft/server": "2.11.0",
+    "@minecraft/server-ui": "2.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

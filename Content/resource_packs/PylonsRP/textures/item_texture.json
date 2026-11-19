@@ -1,0 +1,48 @@
+{
+  "resource_pack_name": "pylons",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "pylons:ui_placeholder": {
+      "textures": "textures/pylons/ui/placeholder_invisible"
+    },
+    "pylons:ui_slot_blocked": {
+      "textures": "textures/pylons/ui/slot_blocked"
+    },
+    "pylons:ui_working_on": {
+      "textures": "textures/pylons/ui/working_on"
+    },
+    "pylons:ui_working_off": {
+      "textures": "textures/pylons/ui/working_off"
+    },
+    "pylons:ui_range_1x1": {
+      "textures": "textures/pylons/ui/range_1x1"
+    },
+    "pylons:ui_range_3x3": {
+      "textures": "textures/pylons/ui/range_3x3"
+    },
+    "pylons:ui_range_5x5": {
+      "textures": "textures/pylons/ui/range_5x5"
+    },
+    "pylons:ui_range_7x7": {
+      "textures": "textures/pylons/ui/range_7x7"
+    },
+    "pylons:ui_range_9x9": {
+      "textures": "textures/pylons/ui/range_9x9"
+    },
+    "pylons:mob_filter": {
+      "textures": "textures/pylons/items/mob_filter"
+    },
+    "pylons:player_filter": {
+      "textures": "textures/pylons/items/player_filter"
+    },
+    "pylons:block_filter": {
+      "textures": "textures/pylons/items/block_filter"
+    },
+    "pylons:lifeless_filter": {
+      "textures": "textures/pylons/items/lifeless_filter"
+    },
+    "pylons:potion_filter": {
+      "textures": "textures/pylons/items/potion_filter"
+    }
+  }
+}

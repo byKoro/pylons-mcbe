@@ -1,0 +1,6 @@
+node_modules/
+*.mcpack
+*.mcaddon
+!/Furnaces Chests Add-On (addon).mcaddon
+graphify-out/
+tools/out/

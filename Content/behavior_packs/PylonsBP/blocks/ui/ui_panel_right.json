@@ -1,0 +1,40 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "pylons:ui_panel_right",
+      "menu_category": {
+        "category": "none",
+        "is_hidden_in_commands": true
+      }
+    },
+    "components": {
+      "minecraft:custom_components": ["pylons:ui_placeholder_block"],
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "pylons:ui_panel",
+          "render_method": "opaque",
+          "face_dimming": false,
+          "ambient_occlusion": false
+        }
+      },
+      "minecraft:placement_filter": {
+        "conditions": [
+          {
+            "allowed_faces": ["down"],
+            "block_filter": [{ "tags": "q.any_tag('pylons:unplaceable')" }]
+          }
+        ]
+      },
+      "minecraft:display_name": "tile.pylons:ui_panel_right.name",
+      "minecraft:collision_box": false,
+      "minecraft:selection_box": false,
+      "minecraft:geometry": "geometry.pylons.ui.panel_right",
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.1
+      },
+      "minecraft:light_dampening": 0,
+      "minecraft:map_color": "#C6C6C6"
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "format_version": "1.21.20",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.pylons.pylon",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [0, 0.5, 0]
+      },
+      "bones": [
+        {
+          "name": "base",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-8, 0, -8],
+              "size": [16, 3, 16],
+              "uv": {
+                "north": { "uv": [0, 0], "uv_size": [16, 3], "material_instance": "base" },
+                "east": { "uv": [0, 0], "uv_size": [16, 3], "material_instance": "base" },
+                "south": { "uv": [0, 0], "uv_size": [16, 3], "material_instance": "base" },
+                "west": { "uv": [0, 0], "uv_size": [16, 3], "material_instance": "base" },
+                "up": { "uv": [16, 16], "uv_size": [-16, -16], "material_instance": "base" },
+                "down": { "uv": [16, 16], "uv_size": [-16, -16], "material_instance": "base" }
+              }
+            }
+          ]
+        },
+        {
+          "name": "columns",
+          "pivot": [0, 8, 0],
+          "cubes": [
+            {
+              "origin": [-6, 3, -6],
+              "size": [2, 11, 2],
+              "uv": {
+                "north": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "east": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "south": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "west": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "up": { "uv": [7, 0], "uv_size": [2, 2], "material_instance": "bars" },
+                "down": { "uv": [7, 0], "uv_size": [2, 2], "material_instance": "bars" }
+              }
+            },
+            {
+              "origin": [4, 3, -6],
+              "size": [2, 11, 2],
+              "uv": {
+                "north": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "east": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "south": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "west": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "up": { "uv": [7, 0], "uv_size": [2, 2], "material_instance": "bars" },
+                "down": { "uv": [7, 0], "uv_size": [2, 2], "material_instance": "bars" }
+              }
+            },
+            {
+              "origin": [-6, 3, 4],
+              "size": [2, 11, 2],
+              "uv": {
+                "north": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "east": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "south": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "west": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "up": { "uv": [7, 0], "uv_size": [2, 2], "material_instance": "bars" },
+                "down": { "uv": [7, 0], "uv_size": [2, 2], "material_instance": "bars" }
+              }
+            },
+            {
+              "origin": [4, 3, 4],
+              "size": [2, 11, 2],
+              "uv": {
+                "north": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "east": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "south": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "west": { "uv": [7, 0], "uv_size": [2, 16], "material_instance": "bars" },
+                "up": { "uv": [7, 0], "uv_size": [2, 2], "material_instance": "bars" },
+                "down": { "uv": [7, 0], "uv_size": [2, 2], "material_instance": "bars" }
+              }
+            }
+          ]
+        },
+        {
+          "name": "plates",
+          "pivot": [0, 8, 0],
+          "cubes": [
+            {
+              "origin": [-7, 14, -7],
+              "size": [14, 2, 14],
+              "uv": {
+                "north": { "uv": [1, 0], "uv_size": [14, 1], "material_instance": "plate" },
+                "east": { "uv": [1, 0], "uv_size": [14, 1], "material_instance": "plate" },
+                "south": { "uv": [1, 0], "uv_size": [14, 1], "material_instance": "plate" },
+                "west": { "uv": [1, 0], "uv_size": [14, 1], "material_instance": "plate" },
+                "up": { "uv": [15, 15], "uv_size": [-14, -14], "material_instance": "plate" },
+                "down": { "uv": [15, 1], "uv_size": [-14, 14], "material_instance": "plate" }
+              }
+            },
+            {
+              "origin": [-7, 2, -7],
+              "size": [14, 2, 14],
+              "uv": {
+                "north": { "uv": [1, 0], "uv_size": [14, 1], "material_instance": "plate" },
+                "east": { "uv": [1, 0], "uv_size": [14, 1], "material_instance": "plate" },
+                "south": { "uv": [1, 0], "uv_size": [14, 1], "material_instance": "plate" },
+                "west": { "uv": [1, 0], "uv_size": [14, 1], "material_instance": "plate" },
+                "up": { "uv": [15, 15], "uv_size": [-14, -14], "material_instance": "plate" },
+                "down": { "uv": [15, 1], "uv_size": [-14, 14], "material_instance": "plate" }
+              }
+            }
+          ]
+        },
+        {
+          "name": "crystal",
+          "pivot": [0, 8, 0],
+          "rotation": [0, 45, 0],
+          "cubes": [
+            {
+              "origin": [-3, 6, -3],
+              "size": [6, 6, 6],
+              "uv": {
+                "north": { "uv": [0, 0], "uv_size": [16, 16], "material_instance": "center" },
+                "east": { "uv": [0, 0], "uv_size": [16, 16], "material_instance": "center" },
+                "south": { "uv": [0, 0], "uv_size": [16, 16], "material_instance": "center" },
+                "west": { "uv": [0, 0], "uv_size": [16, 16], "material_instance": "center" },
+                "up": { "uv": [0, 0], "uv_size": [16, 16], "uv_rotation": 90, "material_instance": "center" },
+                "down": { "uv": [0, 0], "uv_size": [16, 16], "uv_rotation": 270, "material_instance": "center" }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

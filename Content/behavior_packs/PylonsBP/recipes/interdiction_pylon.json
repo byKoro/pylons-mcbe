@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pylons:interdiction_pylon"
+    },
+    "tags": ["crafting_table"],
+    "group": "pylons",
+    "pattern": [
+      "qqq",
+      "idi",
+      "bbb"
+    ],
+    "key": {
+      "b": { "item": "minecraft:polished_blackstone" },
+      "d": { "item": "minecraft:netherite_block" },
+      "i": { "item": "minecraft:iron_bars" },
+      "q": { "item": "minecraft:quartz_slab" }
+    },
+    "unlock": [{ "item": "minecraft:netherite_block" }],
+    "result": {
+      "item": "pylons:interdiction_pylon",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "pylons:pylon_container",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "pylons:with_collision": {
+        "minecraft:collision_box": {
+          "width": 1.0,
+          "height": 1.0
+        }
+      },
+      "pylons:no_collision": {
+        "minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.0
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["pylon", "inanimate", "immovable"]
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:inventory": {
+        "container_type": "minecart_chest",
+        "can_be_siphoned_from": false,
+        "inventory_size": 27
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:physics": {
+        "has_collision": false,
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": "no"
+        }
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["pylons:with_collision"]
+        }
+      },
+      "pylons:add_collision": {
+        "add": {
+          "component_groups": ["pylons:with_collision"]
+        },
+        "remove": {
+          "component_groups": ["pylons:no_collision"]
+        }
+      },
+      "pylons:remove_collision": {
+        "add": {
+          "component_groups": ["pylons:no_collision"]
+        },
+        "remove": {
+          "component_groups": ["pylons:with_collision"]
+        }
+      },
+      "pylons:reset_state": {
+        "add": {
+          "component_groups": ["pylons:with_collision"]
+        },
+        "remove": {
+          "component_groups": ["pylons:no_collision"]
+        }
+      }
+    }
+  }
+}

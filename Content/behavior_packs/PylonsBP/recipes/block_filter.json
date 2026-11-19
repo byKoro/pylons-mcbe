@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "pylons:block_filter"
+    },
+    "tags": ["crafting_table"],
+    "group": "pylons",
+    "pattern": [
+      "tct",
+      "gdg",
+      "ggg"
+    ],
+    "key": {
+      "c": { "item": "minecraft:green_dye" },
+      "d": { "item": "minecraft:honeycomb" },
+      "g": { "item": "minecraft:glass" },
+      "t": { "item": "minecraft:cyan_terracotta" }
+    },
+    "unlock": [{ "item": "pylons:protection_pylon" }],
+    "result": {
+      "item": "pylons:block_filter",
+      "count": 1
+    }
+  }
+}

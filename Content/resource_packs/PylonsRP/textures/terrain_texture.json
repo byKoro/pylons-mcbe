@@ -1,0 +1,33 @@
+{
+  "resource_pack_name": "pylons",
+  "texture_name": "atlas.terrain",
+  "texture_data": {
+    "pylons:ui_panel": {
+      "textures": "textures/pylons/ui/pylon_panel"
+    },
+    "pylons:polished_blackstone": {
+      "textures": "textures/blocks/polished_blackstone"
+    },
+    "pylons:iron_bars": {
+      "textures": "textures/blocks/iron_bars"
+    },
+    "pylons:quartz_block_top": {
+      "textures": "textures/blocks/quartz_block_top"
+    },
+    "pylons:emerald_block": {
+      "textures": "textures/blocks/emerald_block"
+    },
+    "pylons:hay_block_side": {
+      "textures": "textures/blocks/hay_block_side"
+    },
+    "pylons:diamond_block": {
+      "textures": "textures/blocks/diamond_block"
+    },
+    "pylons:netherite_block": {
+      "textures": "textures/blocks/netherite_block"
+    },
+    "pylons:honeycomb_block": {
+      "textures": "textures/blocks/honeycomb"
+    }
+  }
+}
