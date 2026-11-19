@@ -15,3 +15,6 @@ export const EXPULSION_PYLON: PylonKindDefinition = {
     },
     explosionProof: EXPULSION_PYLON_CONFIG.explosionProof,
 }
+
+export { clearExpulsionPlayerState, tickExpulsionPlayers } from './expulsionRunner'
+export { expulsionWork } from './expulsionWork'
