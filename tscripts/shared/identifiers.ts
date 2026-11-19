@@ -67,6 +67,7 @@ export const DYNAMIC_PROPERTY_IDS = {
     pylonBlockId: `${NAMESPACE}:block_id`,
     filterData: `${NAMESPACE}:filter`,
     infusionIndex: `${NAMESPACE}:infusion_index`,
+    interdictionIndex: `${NAMESPACE}:interdiction_index`,
     protectionIndex: `${NAMESPACE}:protection_index`,
 } as const
 
@@ -109,3 +110,5 @@ const UI_ITEM_TYPE_IDS = new Set<string>([
 ])
 
 export const isUiItemTypeId = (typeId: string): boolean => UI_ITEM_TYPE_IDS.has(typeId)
+
+export const isPylonsTypeId = (typeId: string): boolean => typeId.startsWith(`${NAMESPACE}:`)

@@ -5,6 +5,9 @@ export interface InterdictionPylonConfig extends BasePylonConfig {
     readonly headerText: string
     readonly rangeTitle: string
     readonly ranges: readonly RangeSize[]
+    readonly workDelayTicks: number
+    readonly chunkRadii: Readonly<Record<string, number>>
+    readonly lifelessChunkRadius: number
 }
 
 export const INTERDICTION_PYLON_CONFIG: InterdictionPylonConfig = {
@@ -12,4 +15,11 @@ export const INTERDICTION_PYLON_CONFIG: InterdictionPylonConfig = {
     headerText: 'Add mobs to prevent spawns:',
     rangeTitle: 'Work area (in chunks)',
     ranges: ['1x1', '3x3', '5x5'],
-}
+    workDelayTicks: 20,
+    chunkRadii: {
+        '1x1': 0,
+        '3x3': 1,
+        '5x5': 2,
+    },
+    lifelessChunkRadius: 12,
+} as const

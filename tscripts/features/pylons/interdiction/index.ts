@@ -15,3 +15,6 @@ export const INTERDICTION_PYLON: PylonKindDefinition = {
     },
     explosionProof: INTERDICTION_PYLON_CONFIG.explosionProof,
 }
+
+export { handleAfterEntitySpawnInterdiction } from './interdictionGuard'
+export { interdictionWork } from './interdictionWork'
