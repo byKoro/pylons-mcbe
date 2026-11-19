@@ -3,7 +3,7 @@ import type { PylonKindDefinition } from './types'
 
 export interface PylonWork {
     update(entity: Entity, definition: PylonKindDefinition, tick: number): number
-    remove(entity: Entity): void
+    remove?(entity: Entity): void
 }
 
 class PylonWorkRegistry {
@@ -18,7 +18,7 @@ class PylonWorkRegistry {
     }
 
     removeEntity(entity: Entity, kindId: string): void {
-        this.works.get(kindId)?.remove(entity)
+        this.works.get(kindId)?.remove?.(entity)
     }
 }
 

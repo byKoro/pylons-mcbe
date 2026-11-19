@@ -15,3 +15,6 @@ export const HARVESTER_PYLON: PylonKindDefinition = {
     },
     explosionProof: HARVESTER_PYLON_CONFIG.explosionProof,
 }
+
+export { buildHarvesterCrops } from './harvesterCrops'
+export { harvesterWork } from './harvesterWork'
