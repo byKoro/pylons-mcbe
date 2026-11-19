@@ -67,6 +67,7 @@ export const DYNAMIC_PROPERTY_IDS = {
     pylonBlockId: `${NAMESPACE}:block_id`,
     filterData: `${NAMESPACE}:filter`,
     infusionIndex: `${NAMESPACE}:infusion_index`,
+    protectionIndex: `${NAMESPACE}:protection_index`,
 } as const
 
 export const SCRIPT_EVENT_IDS = {

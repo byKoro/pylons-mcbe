@@ -15,3 +15,10 @@ export const PROTECTION_PYLON: PylonKindDefinition = {
     },
     explosionProof: PROTECTION_PYLON_CONFIG.explosionProof,
 }
+
+export {
+    clearProtectionPlayerState,
+    handleBeforeBreakProtectedBlock,
+    handleBeforeHurtProtectedMob,
+} from './protectionGuard'
+export { protectionWork } from './protectionWork'
