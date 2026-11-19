@@ -7,7 +7,7 @@ export const POTION_FILTER_CONFIG: PotionFilterConfig = {
     requiredDurationSeconds: 3600,
     maximumPotency: 3,
     allowedEffects: [],
-    deniedEffects: ['minecraft:absorption'],
+    deniedEffects: [],
 }
 
 export const MINIMUM_EFFECT_TICKS: number =

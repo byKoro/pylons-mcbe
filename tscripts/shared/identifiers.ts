@@ -71,6 +71,7 @@ export const DYNAMIC_PROPERTY_IDS = {
 
 export const SCRIPT_EVENT_IDS = {
     debug: `${NAMESPACE}:debug`,
+    selftest: `${NAMESPACE}:selftest`,
     uiProfile: `${NAMESPACE}:ui_profile`,
 } as const
 

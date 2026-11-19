@@ -2,6 +2,7 @@ import {
     EntityComponentTypes,
     EquipmentSlot,
     Player,
+    type Effect,
     system,
     type Entity,
     type EntityEquippableComponent,
@@ -10,12 +11,15 @@ import {
     type PlayerInteractWithBlockBeforeEvent,
     type PlayerInteractWithEntityBeforeEvent,
 } from '@minecraft/server'
+import { describeError } from '../../shared/errors'
+import { logWarn } from '../../shared/log'
 import { ENTITY_IDS, ITEM_IDS, isFilterItemTypeId } from '../../shared/identifiers'
 import { MINIMUM_EFFECT_TICKS, POTION_FILTER_CONFIG, REQUIRED_EFFECT_TICKS, TICKS_PER_SECOND } from './config'
 import {
     clearFilterPayload,
     hasCapturedFilterData,
     isClearableFilterTypeId,
+    isEffectAllowed,
     normalizeEffectId,
     readBlockFilter,
     readMobFilter,
@@ -171,6 +175,33 @@ const tryMergePotionFilters = (
     return true
 }
 
+interface ActiveEffectSnapshot {
+    readonly typeId: string
+    readonly amplifier: number
+    readonly duration: number
+    readonly displayName: string
+}
+
+const readEffectField = <T>(effect: Effect, field: string, read: (effect: Effect) => T): T | undefined => {
+    try {
+        return read(effect)
+    } catch (error) {
+        logWarn(`[Pylons:Filter] Effect ${field} unreadable: ${describeError(error)}`)
+        return undefined
+    }
+}
+
+const snapshotEffect = (effect: Effect): ActiveEffectSnapshot | undefined => {
+    const typeId = readEffectField(effect, 'typeId', current => current.typeId)
+    const amplifier = readEffectField(effect, 'amplifier', current => current.amplifier)
+    const duration = readEffectField(effect, 'duration', current => current.duration)
+    if (typeId === undefined || amplifier === undefined || duration === undefined) return undefined
+    const displayName =
+        readEffectField(effect, 'displayName', current => current.displayName) ??
+        formatIdentifierName(normalizeEffectId(typeId))
+    return { typeId, amplifier, duration, displayName }
+}
+
 const useHeldPotionFilter = (player: Player): void => {
     const equippable = getEquippable(player)
     if (!equippable) return
@@ -186,9 +217,13 @@ const useHeldPotionFilter = (player: Player): void => {
         return
     }
 
-    const activeEffects = player.getEffects()
-    const match = activeEffects.find(effect => {
+    const snapshots = player.getEffects().flatMap(effect => {
+        const snapshot = snapshotEffect(effect)
+        return snapshot ? [snapshot] : []
+    })
+    const match = snapshots.find(effect => {
         if (effect.duration < MINIMUM_EFFECT_TICKS) return false
+        if (!isEffectAllowed(effect.typeId)) return false
         if (!mainPayload) return true
         return (
             normalizeEffectId(effect.typeId) === mainPayload.effectTypeId &&
@@ -201,12 +236,13 @@ const useHeldPotionFilter = (player: Player): void => {
         ? Math.min(REQUIRED_EFFECT_TICKS, mainPayload.durationTicks + match.duration)
         : match.duration
     const effectTypeId = normalizeEffectId(match.typeId)
+    const displayName = match.displayName
     const nextPayload: PotionFilterPayload = {
         kind: 'potion',
         effectTypeId,
         amplifier: match.amplifier,
         durationTicks: nextTicks,
-        displayName: match.displayName,
+        displayName,
     }
 
     writeFilterPayload(mainhand, nextPayload)
@@ -215,7 +251,7 @@ const useHeldPotionFilter = (player: Player): void => {
     player.removeEffect(match.typeId)
 
     player.playSound('random.orb', { volume: 0.4, pitch: 1.2 })
-    const effectLabel = formatEffectDisplayName(match.displayName, effectTypeId, match.amplifier)
+    const effectLabel = formatEffectDisplayName(displayName, effectTypeId, nextPayload.amplifier)
     const seconds = Math.floor(nextTicks / TICKS_PER_SECOND)
     const status =
         nextTicks >= REQUIRED_EFFECT_TICKS
